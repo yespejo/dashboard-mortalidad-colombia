@@ -30,4 +30,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE $PORT
 
 # Command to run the application
-CMD exec gunicorn run:app --bind 0.0.0.0:$PORT --workers 1
+CMD exec gunicorn --bind 0.0.0.0:$PORT
