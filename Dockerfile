@@ -5,7 +5,6 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Define puerto por defecto (Railway sobreescribe este valor)
-ENV PORT=8000
-
-CMD sh -c "gunicorn --bind 0.0.0.0:$PORT app:app"
+EXPOSE 8000
+ENV NAME World
+CMD ["python", "app.py"]
