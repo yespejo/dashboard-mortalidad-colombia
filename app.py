@@ -782,4 +782,13 @@ if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 5000))
     debug = os.environ.get('FLASK_ENV') != 'production'
-    app.run(debug=debug, host='0.0.0.0', port=port)
+    
+    # Railway compatibility - check for Railway environment
+    is_railway = os.environ.get('RAILWAY_ENVIRONMENT') == 'production'
+    
+    if is_railway:
+        # Railway production configuration
+        app.run(debug=False, host='0.0.0.0', port=port)
+    else:
+        # Local development or other platforms
+        app.run(debug=debug, host='0.0.0.0', port=port)
