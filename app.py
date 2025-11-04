@@ -780,7 +780,7 @@ def distribucion_edades():
 
 if __name__ == '__main__':
     import os
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 8080))
     debug = os.environ.get('FLASK_ENV') != 'production'
     
     # Railway compatibility - check for Railway environment
