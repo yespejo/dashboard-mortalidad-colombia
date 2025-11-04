@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Define puerto por defecto (Railway sobreescribe este valor)
 ENV PORT=5000
 
-CMD ["/bin/bash", "-c", "gunicorn tu_app:app --bind 0.0.0.0:$PORT"]
+CMD ["/bin/bash", "-c", "gunicorn app:app --bind 0.0.0.0:$PORT"]
