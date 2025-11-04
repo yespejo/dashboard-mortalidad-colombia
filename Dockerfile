@@ -1,10 +1,33 @@
+# Use an official Python runtime as a parent image
 FROM python:3.11-slim
 
+# Set the working directory in the container
 WORKDIR /app
-COPY . /app
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the requirements file into the container at /app
+COPY requirements.txt .
+
+# Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV PORT=5000
+# Copy the rest of the application's code into the container at /app
+COPY . .
 
-CMD sh -c "gunicorn --bind 0.0.0.0:$PORT --timeout 600 app:app"
+# Declare PORT as build argument so Railway can inject it
+# ARG PORT
+# ENV PORT=${PORT:-8080}
+
+# Set environment variables
+ENV FLASK_APP=run.py
+ENV PYTHONUNBUFFERED=1
+
+# Expose the port
+# EXPOSE $PORT
+
+# Command to run the application
+CMD exec gunicorn run:app --bind 0.0.0.0:$PORT --workers 1
