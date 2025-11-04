@@ -1,33 +1,15 @@
-# Use an official Python runtime as a parent image
-FROM python:3.11-slim
+# Use the Python 3 alpine official image
+# https://hub.docker.com/_/python
+FROM python:3-alpine
 
-# Set the working directory in the container
+# Create and change to the app directory.
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy the requirements file into the container at /app
-COPY requirements.txt .
-
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the application's code into the container at /app
+# Copy local code to the container image.
 COPY . .
 
-# Declare PORT as build argument so Railway can inject it
-ARG PORT
-ENV PORT=${PORT:-8080}
+# Install project dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Set environment variables
-ENV FLASK_APP=run.py
-ENV PYTHONUNBUFFERED=1
-
-# Expose the port
-EXPOSE $PORT
-
-# Command to run the application
-CMD exec gunicorn --bind 0.0.0.0:$PORT
+# Run the web service on container startup.
+CMD ["hypercorn", "main:app", "--bind", "::"]
