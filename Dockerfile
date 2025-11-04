@@ -9,6 +9,8 @@ WORKDIR /app
 COPY . .
 
 # Install project dependencies
+COPY requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup.
