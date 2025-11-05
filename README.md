@@ -455,24 +455,3 @@ Las contribuciones son bienvenidas. Para contribuir:
 3. Commit de los cambios (`git commit -am 'Agregar nueva funcionalidad'`)
 4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
 5. Crear un Pull Request
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 📞 Contacto
-
-Para preguntas o sugerencias sobre el proyecto, puedes contactar a través de:
-
-- **GitHub Issues**: Para reportar bugs o solicitar funcionalidades
-- **Email**: [tu-email@ejemplo.com]
-
-## 🙏 Agradecimientos
-
-- Datos proporcionados por entidades oficiales colombianas
-- Comunidad de desarrolladores de Flask y Plotly
-- Contribuidores del proyecto
-
----
-
-**Nota**: Este dashboard está diseñado con fines educativos y de análisis. Los datos presentados corresponden al año 2019 y deben ser interpretados en su contexto histórico y metodológico correspondiente.
