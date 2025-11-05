@@ -308,8 +308,11 @@ gunicorn --workers=4 --bind=0.0.0.0:5000 --timeout=120 app:app
 ```
 
 ## 📊 Visualizaciones y Análisis de Resultados
+![Dashboard](img/1.png)
 
 ### 1. 🗺️ Mapa de Mortalidad por Departamento
+
+![Mapa de Mortalidad por Departamento](img/2.png)
 
 **Descripción**: Gráfico de barras que muestra la distribución total de defunciones por departamento en Colombia durante 2019.
 
@@ -324,6 +327,8 @@ gunicorn --workers=4 --bind=0.0.0.0:5000 --timeout=120 app:app
 
 ### 2. 📈 Tendencia Mensual de Mortalidad
 
+![Tendencia Mensual de Mortalidad](img/3.png)
+
 **Descripción**: Gráfico de líneas que muestra la evolución temporal de las defunciones a lo largo de los 12 meses de 2019.
 
 **Hallazgos Relevantes**:
@@ -336,6 +341,8 @@ gunicorn --workers=4 --bind=0.0.0.0:5000 --timeout=120 app:app
 ---
 
 ### 3. 🚨 Análisis de Violencia por Municipios
+
+![Análisis de Violencia por Municipios](img/4.png)
 
 **Descripción**: Gráfico de barras del top 10 de municipios con mayor número de homicidios registrados.
 
@@ -350,6 +357,8 @@ gunicorn --workers=4 --bind=0.0.0.0:5000 --timeout=120 app:app
 
 ### 4. 🕊️ Municipios con Menor Mortalidad
 
+![Municipios con Menor Mortalidad](img/5.png)
+
 **Descripción**: Gráfico circular (pie chart) que muestra los 10 municipios con menor número de defunciones registradas.
 
 **Hallazgos Relevantes**:
@@ -362,6 +371,8 @@ gunicorn --workers=4 --bind=0.0.0.0:5000 --timeout=120 app:app
 ---
 
 ### 5. 📋 Principales Causas de Muerte
+
+![Principales Causas de Muerte](img/6.png)
 
 **Descripción**: Tabla ordenada con las 15 principales causas de muerte según códigos CIE-10 internacionales.
 
@@ -376,6 +387,8 @@ gunicorn --workers=4 --bind=0.0.0.0:5000 --timeout=120 app:app
 
 ### 6. ⚖️ Análisis Comparativo por Género
 
+![Análisis Comparativo por Género](img/7.png)
+
 **Descripción**: Gráfico de barras apiladas que compara la mortalidad entre hombres y mujeres por departamento.
 
 **Hallazgos Relevantes**:
@@ -388,6 +401,8 @@ gunicorn --workers=4 --bind=0.0.0.0:5000 --timeout=120 app:app
 ---
 
 ### 7. 👥 Distribución por Grupos Etarios
+
+![Distribución por Grupos Etarios](img/8.png)
 
 **Descripción**: Histograma que muestra la distribución de muertes por grupos de edad según el ciclo de vida.
 
